@@ -1,4 +1,4 @@
-Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
+Sg Telegram Gh, [Oct 22, 2026 at 11:58 AM]
 <!DOCTYPE html>
 <html lang="my">
 <head>
@@ -39,7 +39,7 @@ Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
     .input-group {
       display: flex;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     input[type="url"] {
       flex: 1;
@@ -75,7 +75,23 @@ Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
       background-color: #0284c7;
       color: #fff;
       width: 100%;
-      margin-top: 8px;
+    }
+    .samples {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .sample-btn {
+      background: #334155;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    .sample-btn:active {
+      color: #fff;
     }
     .form-group {
       margin-top: 16px;
@@ -97,6 +113,14 @@ Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
       font-size: 0.95rem;
       outline: none;
     }
+    video {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 12px;
+      background: #000;
+      max-height: 220px;
+      display: none;
+    }
     .progress-box {
       margin-top: 16px;
       display: none;
@@ -112,7 +136,7 @@ Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
       background: #38bdf8;
       height: 100%;
       width: 0%;
-      transition: width 0.3s;
+      transition: width 0.2s;
     }
     .error-msg {
       margin-top: 14px;
@@ -137,30 +161,15 @@ Sg Telegram Gh, [Oct 22, 2026 at 11:45 AM]
       <button class="btn-paste" id="pasteBtn" type="button">Paste</button>
     </div>
 
+    <!-- Quick Test Samples -->
+    <div class="samples">
+      <span style="font-size:0.75rem; color:#64748b; line-height:26px;">စမ်းသပ်ရန် Link:</span>
+      <button class="sample-btn" type="button" onclick="loadSample('1080p')">1080p Sample</button>
+      <button class="sample-btn" type="button" onclick="loadSample('720p')">720p Sample</button>
+    </div>
+
     <!-- Analyze Button -->
-    <button class="btn-primary" id="analyzeBtn" type="button">Analyze</button>
+    <button class="btn-primary" id="analyzeBtn" type="button">Analyze Link</button>
 
     <!-- Error Message -->
     <div class="error-msg" id="errorMsg"></div>
-
-    <!-- Quality Selector & Download Section -->
-    <div class="form-group" id="downloadSection">
-      <label for="qualitySelect">ရွေးချယ်နိုင်သော Resolution</label>
-      <select id="qualitySelect">
-        <option value="">Resolution ရွေးပါ</option>
-      </select>
-
-      <button class="btn-primary" id="downloadBtn" type="button" style="background-color: #10b981; margin-top: 14px;">Download</button>
-    </div>
-
-    <!-- Progress Indicator -->
-    <div class="progress-box" id="progressBox">
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94a3b8;">
-        <span id="progressText">လုပ်ဆောင်နေသည်...</span>
-        <span id="progressPercent">0%</span>
-      </div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" id="progressBar"></div>
-      </div>
-    </div>
-  </div>
